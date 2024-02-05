@@ -67,7 +67,7 @@ window.addEventListener('DOMContentLoaded', function () {
             img.addEventListener('error', () => {
 
             })
-            img.src = `./assets.0.0.1/images/preview/${id + 1}.jpg`
+            img.src = `./assets.1.0.0/images/preview/${id + 1}.jpg`
             img.addEventListener('click', () => {
                 viewPageActive()
 
@@ -82,7 +82,7 @@ window.addEventListener('DOMContentLoaded', function () {
                 img.addEventListener('error', () => {
                     imgBox.innerText = 'not found'
                 })
-                img.src = `./assets.0.0.1/images/full/${id + 1}.jpg`
+                img.src = `./assets.1.0.0/images/full/${id + 1}.jpg`
             })
         }
         checkView()
