@@ -21,6 +21,18 @@ window.addEventListener('DOMContentLoaded', function () {
     let imgSizeZoom = 100;
     let isLoad = false;
 
+    function loadingDiv() {
+        let loader = document.createElement('div')
+        loader.classList.add('loader')
+
+        let wheel = document.createElement('div')
+        wheel.classList.add('loader-wheel')
+
+        loader.appendChild(wheel)
+
+        return loader
+    }
+
     function viewPageActive() {
         imgBox.innerHTML = null
         viewPage.classList.add('active')
@@ -55,24 +67,31 @@ window.addEventListener('DOMContentLoaded', function () {
                 (imgBoxs[id].offsetTop > this.scrollY + (window.innerHeight * (7 / 8)))
             ) { return }
             if (isView) { return }
+
             isView = true;
 
             window.removeEventListener('scroll', checkView, false)
 
+            imgBoxs[id].appendChild( loadingDiv() )
+
             const img = document.createElement('img')
-            imgBoxs[id].appendChild(img)
             img.addEventListener('load', () => {
-                img.style.opacity = 1;
-            })
-            img.addEventListener('error', () => {
+                imgBoxs[id].innerHTML = null
+                imgBoxs[id].appendChild(img)
+                setTimeout(() => { img.style.opacity = 1 }, 50)
 
             })
-            img.src = `./assets.1.0.0/images/preview/${id + 1}.jpg`
-            img.addEventListener('click', () => {
+            img.addEventListener('error', () => {
+                imgBoxs[id].innerText = 'not found'
+            })
+            img.src = `./assets.1.0.1/images/preview/${id + 1}.jpg`
+            imgBoxs[id].addEventListener('click', () => {
                 viewPageActive()
+                imgBox.appendChild( loadingDiv() )
 
                 const img = document.createElement('img')
                 img.addEventListener('load', () => {
+                    imgBox.innerHTML = null
                     imgBox.appendChild(img)
                     setTimeout(() => {
                         isLoad = true;
@@ -82,7 +101,7 @@ window.addEventListener('DOMContentLoaded', function () {
                 img.addEventListener('error', () => {
                     imgBox.innerText = 'not found'
                 })
-                img.src = `./assets.1.0.0/images/full/${id + 1}.jpg`
+                img.src = `./assets.1.0.1/images/full/${id + 1}.jpg`
             })
         }
         checkView()
