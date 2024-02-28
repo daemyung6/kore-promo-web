@@ -84,7 +84,7 @@ window.addEventListener('DOMContentLoaded', function () {
             img.addEventListener('error', () => {
                 imgBoxs[id].innerText = 'not found'
             })
-            img.src = `https://cdn.jsdelivr.net/gh/daemyung6/kore-promo-web/assets.1.0.2/images/preview/${id + 1}.jpg`
+            img.src = `https://cdn.jsdelivr.net/gh/daemyung6/kore-promo-web/assets.1.0.3/images/preview/${id + 1}.jpg`
             imgBoxs[id].addEventListener('click', () => {
                 viewPageActive()
                 imgBox.appendChild( loadingDiv() )
@@ -101,7 +101,7 @@ window.addEventListener('DOMContentLoaded', function () {
                 img.addEventListener('error', () => {
                     imgBox.innerText = 'not found'
                 })
-                img.src = `https://cdn.jsdelivr.net/gh/daemyung6/kore-promo-web/assets.1.0.2/images/full/${id + 1}.jpg`
+                img.src = `https://cdn.jsdelivr.net/gh/daemyung6/kore-promo-web/assets.1.0.3/images/full/${id + 1}.jpg`
             })
         }
         checkView()
