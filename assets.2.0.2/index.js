@@ -177,7 +177,7 @@ window.addEventListener('DOMContentLoaded', function () {
      */
     function changeURL(url) {
         if(url.length === 0) {
-            window.history.pushState({}, '', `${window.location.origin}`);
+            window.history.pushState({}, '', `${window.location.origin}/kore-promo-web`);
             return
         }
         window.history.pushState({}, '', `${window.location.origin}/kore-promo-web#${url}`);
