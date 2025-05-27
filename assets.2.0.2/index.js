@@ -18,7 +18,7 @@ window.addEventListener('DOMContentLoaded', function () {
 window.addEventListener('DOMContentLoaded', function () {
     const imageIds = [
         '1-fb2373e5-8a24-454c-911b-1eddb566261e',
-        '2-cbddc6c9-a8d8-466f-88b9-df595bd6ae85',
+        '2-bc0ec6c0-2854-476d-9041-486de9917cd4',
         '3-fe61606f-26e2-4b75-afa0-c374aa9dbb83',
         '4-b408a749-827f-4e1a-8098-3b150f09f2b2',
         '5-018fc28d-4fdd-4729-9c67-41c0e5e8d7bf',
@@ -180,6 +180,6 @@ window.addEventListener('DOMContentLoaded', function () {
             window.history.pushState({}, '', `${window.location.origin}`);
             return
         }
-        window.history.pushState({}, '', `${window.location.origin}/#${url}`);
+        window.history.pushState({}, '', `${window.location.origin}/kore-promo-web#${url}`);
     }
 })
